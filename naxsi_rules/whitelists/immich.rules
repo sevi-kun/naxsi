@@ -1,0 +1,19 @@
+# immich rules
+
+BasicRule wl:2 "mz:BODY|$URL:/api/assets";
+
+BasicRule wl:11 "mz:BODY|$URL:/api/auth/validateToken";
+BasicRule wl:11 "mz:BODY|$URL:/api/search/large-assets";
+
+BasicRule wl:1000,1005 "mz:$BODY_VAR:acks|$URL:/api/sync/ack";
+
+BasicRule wl:17 "mz:$HEADERS_VAR:accept|$URL:/light_skeleton.png";
+BasicRule wl:17 "mz:$HEADERS_VAR_X:^accept$|$URL_X:^/_app/immutable/assets/.*$";
+BasicRule wl:17 "mz:$HEADERS_VAR_X:^accept$|$URL_X:^/api/assets/[0-9a-f-]{36}/thumbnail$";
+BasicRule wl:17 "mz:$HEADERS_VAR_X:^accept$|$URL_X:^/api/assets/[0-9a-f-]{36}/video/playback$";
+
+BasicRule wl:1000 "mz:URL|$URL_X:^/_app/immutable/assets/.*$";
+
+BasicRule wl:1000,1009 "mz:$ARGS_VAR_X:^c$|$URL_X:^/api/assets/[0-9a-f-]{36}/thumbnail$";
+BasicRule wl:1009 "mz:$ARGS_VAR_X:^c$|$URL_X:^/api/assets/[0-9a-f-]{36}/video/playback$";
+
