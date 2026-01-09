@@ -8,6 +8,7 @@ BasicRule wl:1000,1002 "mz:$HEADERS_VAR:cookie";
 
 # /Users.*
 BasicRule wl:1000,1015 "mz:$ARGS_VAR_X:^Fields$|$URL_X:^/Users.*$";
+BasicRule wl:1010,1011,1012,1302 "mz:$BODY_VAR_X:^CurrentPw$|$URL_X:^/Users/[0-9a-f]{32}/Password$";
 BasicRule wl:1000,1015 "mz:$ARGS_VAR_X:^EnableImageTypes$|$URL_X:^/Users.*$";
 BasicRule wl:1000 "mz:$BODY_VAR_X:^RememberAudioSelections$|NAME|$URL_X:^/Users/[0-9a-f-]*.*$";
 BasicRule wl:1000 "mz:$BODY_VAR_X:^RememberSubtitleSelections$|NAME|$URL_X:^/Users/[0-9a-f-]*.*$";
@@ -35,13 +36,14 @@ BasicRule wl:1015 "mz:$ARGS_VAR:StartIndex|$URL:/Shows/NextUp?";
 BasicRule wl:15,1000,1001,1101,1015,1205 "mz:BODY|$URL:/DisplayPreferences/usersettings";
 BasicRule wl:1000 "mz:$BODY_VAR_X:^chromecastVersion$|$URL_X:^/DisplayPreferences/[0-9a-f-]*$";
 BasicRule wl:1000 "mz:$BODY_VAR_X:^ShowBackdrop$|NAME|$URL_X:^/DisplayPreferences/[0-9a-f-]*$";
-BasicRule wl:1101 "mz:BODY|NAME|$URL:/DisplayPreferences/usersettings";
+BasicRule wl:1101,1109 "mz:BODY|NAME|$URL:/DisplayPreferences/usersettings";
 
 # /Items.*
 BasicRule wl:17 "mz:$HEADERS_VAR_X:^accept$|$URL_X:^/Items/[0-9a-f-]*/.*$";
 BasicRule wl:1000 "mz:URL|$URL_X:^/Items/[0-9a-f-]*/.*$";
 BasicRule wl:1000 "mz:$ARGS_VAR_X:^inheritFromParent$|NAME|$URL_X:^/Items/[0-9a-f-]*/ThemeMedia$";
 BasicRule wl:1000,1015 "mz:$ARGS_VAR_X:^Fields$|$URL_X:^/Items.*$";
+BasicRule wl:1000,1001,1013,1015,1205 "mz:$BODY_VAR_X:^Overview$|$URL_X:^/Items/[0-9a-f-]";
 BasicRule wl:1005 "mz:$BODY_VAR_X:^Value$|$URL_X:^/Items/[0-9a-f-]*/PlaybackInfo$";
 BasicRule wl:1013,1100 "mz:$ARGS_VAR:searchTerm|$URL:/Items";
 BasicRule wl:1015 "mz:$BODY_VAR_X:^VideoCodec$|$URL_X:^/Items/[0-9a-f-]*/PlaybackInfo$";
@@ -55,6 +57,9 @@ BasicRule wl:1015 "mz:$ARGS_VAR:IncludeItemTypes|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:Recursive|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:SortOrder|$URL:/Items?";
+
+# /Audio
+BasicRule wl:1005,1015 "mz:$ARGS_VAR_X:^Container$|$URL_X:^/Audio/.*$";
 
 # /Shows/Upcoming
 BasicRule wl:1000,1015 "mz:$ARGS_VAR:EnableImageTypes|$URL:/Shows/Upcoming";
@@ -76,6 +81,8 @@ BasicRule wl:1000,1001,1002,1003,1004,1008,1009,1010,1011,1015,1016,1205 "mz:$BO
 BasicRule wl:1302 "mz:$BODY_VAR:LoginDisclaimer|$URL:/System/Configuration/branding";
 
 # /Sessions
+BasicRule wl:15 "mz:BODY|$URL:/Sessions/Playing";
+BasicRule wl:15 "mz:BODY|$URL:/Sessions/Playing/Stopped";
 BasicRule wl:1000 "mz:$BODY_VAR:EventName|$URL:/Sessions/Playing/Progress";
 BasicRule wl:1000 "mz:$BODY_VAR:SupportedCommands|$URL:/Sessions/Capabilities";
 BasicRule wl:1000 "mz:$BODY_VAR:SupportedCommands|$URL:/Sessions/Capabilities/Full";
@@ -106,6 +113,19 @@ BasicRule wl:1000,1015 "mz:$ARGS_VAR:EnableImageTypes|$URL:/LiveTv/Programs/Reco
 BasicRule wl:1015 "mz:$ARGS_VAR:Fields|$URL:/LiveTv/Programs";
 BasicRule wl:1015 "mz:$ARGS_VAR:Fields|$URL:/LiveTv/Programs/Recommended";
 
+# Artist
+BasicRule wl:1000,1015 "mz:$ARGS_VAR:fields|$URL:/Artists";
+BasicRule wl:1000,1015 "mz:$ARGS_VAR:EnableImageTypes|$URL:/Artists";
+BasicRule wl:1000,1015 "mz:$ARGS_VAR:EnableImageTypes|$URL:/Artists/AlbumArtists";
+BasicRule wl:1013,1100 "mz:$ARGS_VAR:searchTerm|$URL:/Artists";
+BasicRule wl:1015 "mz:$ARGS_VAR:Fields|$URL:/Artists/AlbumArtists";
+BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Artists";
+
+# Persons
+BasicRule wl:1000,1013 "mz:$ARGS_VAR:fields|$URL:/Persons";
+BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Persons";
+BasicRule wl:1100 "mz:$ARGS_VAR:searchTerm|$URL:/Persons";
+
 # Playback Reporting Plugin
 
 # /user_usage_stats
@@ -113,12 +133,3 @@ BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/PlayActivity";
 BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/HourlyReport";
 BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/DurationHistogramReport";
 
-# Artist
-BasicRule wl:1000,1015 "mz:$ARGS_VAR:fields|$URL:/Artists";
-BasicRule wl:1013,1100 "mz:$ARGS_VAR:searchTerm|$URL:/Artists";
-BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Artists";
-
-# Persons
-BasicRule wl:1000,1013 "mz:$ARGS_VAR:fields|$URL:/Persons";
-BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Persons";
-BasicRule wl:1100 "mz:$ARGS_VAR:searchTerm|$URL:/Persons";
