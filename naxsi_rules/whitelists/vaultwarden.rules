@@ -1,0 +1,119 @@
+# Vaultwarden Rules
+
+# General
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^name$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^notes$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^value$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^username$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# Login
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^password$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^totp$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1002,1005,1009 "mz:$BODY_VAR_X:^uri$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^uriChecksum$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# Card
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^brand$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^cardholderName$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^code$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^expMonth$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^expYear$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^number$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# Identity
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address1$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address2$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address3$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^city$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^company$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^country$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^email$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^firstName$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^lastName$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^licenseNumber$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^middleName$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^passportNumber$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^phone$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^postalCode$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^ssn$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^state$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^title$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# SSH Key
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyFingerprint$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^privateKey$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^publicKey$|$URL_X:^/api/ciphers(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# Attachment
+BasicRule wl:0 "mz:FILE_EXT|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/attachment/[0-9a-f]{20}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^key$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/attachment/v2$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^fileName$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/attachment/v2$";
+
+# Send
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^key$|$URL_X:^/api/sends$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^name$|$URL_X:^/api/sends$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^notes$|$URL_X:^/api/sends$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^password$|$URL_X:^/api/sends$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^text$|$URL_X:^/api/sends$";
+
+# Import
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^name$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^notes$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^value$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^username$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^password$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^totp$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1002,1005,1009 "mz:$BODY_VAR_X:^uri$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^uriChecksum$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^brand$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^cardholderName$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^code$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^expMonth$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^expYear$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^number$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address1$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address2$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^address3$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^city$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^company$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^country$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^email$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^firstName$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^lastName$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^licenseNumber$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^middleName$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^passportNumber$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^phone$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^postalCode$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^ssn$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^state$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^title$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyFingerprint$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^privateKey$|$URL_X:^/api/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^publicKey$|$URL_X:^/gapi/ciphers/import-organization(s)?(\?organizationId=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?$";
+
+# Misc
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^name$|$URL_X:^/api/organizations/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/collections$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^key$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^counter$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^credentialId$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^discoverable$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyAlgorithm$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyCurve$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyType$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^keyValue$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^rpId$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^rpName$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^userDisplayName$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR_X:^userHandle$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1002,1005,1009,1205 "mz:$HEADERS_VAR_X:^cookie$|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+BasicRule wl:1007 "mz:$BODY_VAR:refresh_token|$URL:/identity/connect/token";
+BasicRule wl:11,1000 "mz:BODY|$URL_X:^/api/ciphers/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/delete$";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:name|$URL:/api/folders"; # Create Folders
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:name|$URL:/api/collections";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:name|$URL:/api/ciphers/create";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:password|$URL:/api/ciphers/create";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:uri|$URL:/api/ciphers/create";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:username|$URL:/api/ciphers/create";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:uriChecksum|$URL:/api/ciphers/create";
+
