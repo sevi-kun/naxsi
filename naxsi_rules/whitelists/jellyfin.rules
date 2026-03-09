@@ -2,6 +2,8 @@
 
 # global
 BasicRule wl:2,11 "mz:BODY";
+BasicRule wl:15 "mz:BODY|$URL_X:^/SkipButtonCss/UpdateSkipDuration$";
+BasicRule wl:15 "mz:BODY|$URL_X:^/Users/[0-9a-f-]*/FavoriteItems/.*$";
 BasicRule wl:17 "mz:$HEADERS_VAR:accept";
 BasicRule wl:1000 "mz:URL";
 BasicRule wl:1000,1002 "mz:$HEADERS_VAR:cookie";
@@ -39,6 +41,7 @@ BasicRule wl:1000 "mz:$BODY_VAR_X:^ShowBackdrop$|NAME|$URL_X:^/DisplayPreference
 BasicRule wl:1101,1109 "mz:BODY|NAME|$URL:/DisplayPreferences/usersettings";
 
 # /Items.*
+
 BasicRule wl:17 "mz:$HEADERS_VAR_X:^accept$|$URL_X:^/Items/[0-9a-f-]*/.*$";
 BasicRule wl:1000 "mz:URL|$URL_X:^/Items/[0-9a-f-]*/.*$";
 BasicRule wl:1000 "mz:$ARGS_VAR_X:^inheritFromParent$|NAME|$URL_X:^/Items/[0-9a-f-]*/ThemeMedia$";
@@ -57,6 +60,8 @@ BasicRule wl:1015 "mz:$ARGS_VAR:IncludeItemTypes|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:Recursive|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Items?";
 BasicRule wl:1015 "mz:$ARGS_VAR:SortOrder|$URL:/Items?";
+BasicRule wl:1000,1015 "mz:$ARGS_VAR:imageTypes|$URL:/Items";
+BasicRule wl:1015 "mz:$ARGS_VAR:IncludeItemTypes|$URL:/Items";
 
 # /Audio
 BasicRule wl:1005,1015 "mz:$ARGS_VAR_X:^Container$|$URL_X:^/Audio/.*$";
@@ -89,6 +94,13 @@ BasicRule wl:1000 "mz:$BODY_VAR:SupportedCommands|$URL:/Sessions/Capabilities/Fu
 BasicRule wl:1015 "mz:$BODY_VAR:AudioCodec|$URL:/Sessions/Capabilities/Full";
 BasicRule wl:1015 "mz:$BODY_VAR:VideoCodec|$URL:/Sessions/Capabilities/Full";
 BasicRule wl:1200 "mz:$HEADERS_VAR:cookie|$URL:/Sessions/Logout";
+
+# /Repositories
+BasicRule wl:1000 "mz:$BODY_VAR:Name|$URL:/Repositories";
+BasicRule wl:1101 "mz:$BODY_VAR:Url|$URL:/Repositories";
+
+# /Packages/Installed
+BasicRule wl:1101 "mz:$ARGS_VAR_X:^repositoryUrl$|$URL_X:^/Packages/Installed/.*$";
 
 # Branding
 BasicRule wl:1015 "mz:$BODY_VAR:Splashscreen|$URL:/Branding/Splashscreen";
@@ -126,10 +138,25 @@ BasicRule wl:1000,1013 "mz:$ARGS_VAR:fields|$URL:/Persons";
 BasicRule wl:1015 "mz:$ARGS_VAR:SortBy|$URL:/Persons";
 BasicRule wl:1100 "mz:$ARGS_VAR:searchTerm|$URL:/Persons";
 
-# Playback Reporting Plugin
+# Plugins
 
 # /user_usage_stats
 BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/PlayActivity";
 BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/HourlyReport";
 BasicRule wl:1015 "mz:$ARGS_VAR:filter|$URL:/user_usage_stats/DurationHistogramReport";
 
+BasicRule wl:1000 "mz:$BODY_VAR_X:^calendarDisplayMode$|$URL_X:^/JellyfinEnhanced/user-settings/[0-9a-f-]*/settings.json$";
+BasicRule wl:1000 "mz:$BODY_VAR_X:^selectedFontFamilyPresetIndex$|NAME|$URL_X:^/JellyfinEnhanced/user-settings/[0-9a-f-]*/settings.json$";
+BasicRule wl:1000 "mz:$BODY_VAR_X:^selectedFontSizePresetIndex$|NAME|$URL_X:^/JellyfinEnhanced/user-settings/[0-9a-f-]*/settings.json$";
+BasicRule wl:1000 "mz:$BODY_VAR_X:^selectedStylePresetIndex$|NAME|$URL_X:^/JellyfinEnhanced/user-settings/[0-9a-f-]*/settings.json$";
+
+BasicRule wl:1000 "mz:$BODY_VAR_X:^ThemeSelectorEnabled$|NAME|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1005,1101 "mz:$BODY_VAR_X:^JellyseerrUrlMappings$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1009 "mz:$BODY_VAR_X:^JellyseerrApiKey$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1100 "mz:$BODY_VAR_X:^BazarrUrl$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1100 "mz:$BODY_VAR_X:^JellyseerrUrl$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1100 "mz:$BODY_VAR_X:^RadarrUrl$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1100 "mz:$BODY_VAR_X:^SonarrUrl$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1100 "mz:$BODY_VAR_X:^Url$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1101 "mz:$BODY_VAR_X:^JellyseerrExternalUrl$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";
+BasicRule wl:1101 "mz:$BODY_VAR_X:^JellyseerrUrls$|$URL_X:^/Plugins/[0-9a-f-]*/Configuration$";

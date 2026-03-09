@@ -116,4 +116,8 @@ BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:password|$URL:/api/ciphers/create
 BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:uri|$URL:/api/ciphers/create";
 BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:username|$URL:/api/ciphers/create";
 BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:uriChecksum|$URL:/api/ciphers/create";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:masterPasswordHash|$URL:/api/accounts/password";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:masterPasswordHint|$URL:/api/accounts/password";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:newMasterPasswordHash|$URL:/api/accounts/password";
+BasicRule wl:1002,1005,1009,1205 "mz:$BODY_VAR:key|$URL:/api/accounts/password";
 
